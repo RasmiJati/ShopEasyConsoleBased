@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author admin
  */
-public class Product {
+public class Product implements IEntity {
 
     private Long id;
     private String name;
@@ -31,10 +31,12 @@ public class Product {
         this.image = image;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
