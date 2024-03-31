@@ -37,19 +37,22 @@ public class UserController {
         userRepository = new UserRepository();
         userRepository.Create(user);
         System.out.println("Created!!");
-        
-        System.out.println(userRepository.Show());
-        
-//        user.setId(2L);
+
+        System.out.println(userRepository.ShowAll());
+
+        user.setId(2L);
         user.setUsername("rj");
         user.setEmail("rj@gmail");
         user.setPassword("rj123");
         userRepository.Edit(user);
-        System.out.println(userRepository.Show());
+        System.out.println(userRepository.ShowAll());
         System.out.println("Edited");
-        
+
+//        System.out.println("By id : " + userRepository.ShowById(1L));
+        System.out.println("By id : " + userRepository.ShowById(2L));
+
         userRepository.Delete(user);
-        System.out.println(userRepository.Show());
+        System.out.println(userRepository.ShowAll());
         System.out.println("Deleted");
     }
 }
